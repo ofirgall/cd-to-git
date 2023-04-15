@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/4954051/232235250-63ea5a64-c910-4b8d-9
 ## Usage
 ```bash
 cg ~/workspace/ # cd to a git repo in ~/workspace/
-cg # cd to a git repo to $CD_TO_GIT_DEFAULT_DIR
+cg              # cd to a git repo to $CD_TO_GIT_DEFAULT_DIR
 ```
 
 ## Install
@@ -36,4 +36,15 @@ source ~/.cd-to-git/cdtogit.plugin.bash
 ## Config
 ```bash
 export CD_TO_GIT_DEFAULT_DIR=~/workspace/
+```
+
+### Aliases
+I suggest to set some aliases for `cg` to different dirs:
+```bash
+alias cgp='cg $HOME/workspace/personal/' # cg to personal
+alias cgk='cg $HOME/workspace/kernels/' # cg to kernels
+alias cgg='cg $HOME/go' # cg to go
+alias cgnp='cg $HOME/.local/share/nvim/lazy' # cg to nvim plugins
+alias cgzp='cg $HOME/.local/share/zinit/plugins/' # cg to zsh plugins
+alias cgt='cg $HOME/.tmux/plugins/' # cg to tmux plugins
 ```
