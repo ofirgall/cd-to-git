@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# cd to git repos with fzf menus
-# usage: cg - starts from $START_DIR
-#		 cg ~/dir - starts from ~/dir
-
-$CD_TO_GIT_DEFAULT_DIR=$HOME/workspace
+if [ -z $CD_TO_GIT_DEFAULT_DIR ]; then
+	CD_TO_GIT_DEFAULT_DIR=$HOME/workspace
+fi
 source $HOME/dotfiles_scripts/helpers/git.sh
 
 original_pwd=$(pwd)
@@ -64,7 +62,7 @@ get_branch()
 if [ "$#" -eq 1 ]; then
 	cd $1
 else
-	cd $START_DIR
+	cd $CD_TO_GIT_DEFAULT_DIR
 fi
 choose_dir
 pwd # echo pwd at end (to cd later)
