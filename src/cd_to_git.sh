@@ -7,9 +7,14 @@ source $HOME/dotfiles_scripts/helpers/git.sh
 
 original_pwd=$(pwd)
 
-ls_with_branch()
+BRANCH_COLOR="\033[1;36m"
+RESET_COLOR="\033[0m"
+
+ls_designed()
 {
-	for i in $(ls -d */); do echo "$i ($(get_branch $i))"; done
+	for i in $(ls -d */); do
+		echo -e "$i $BRANCH_COLOR($(get_branch $i))$RESET_COLOR"
+	done
 }
 
 choose_dir()
@@ -23,7 +28,7 @@ choose_dir()
 		return
 	fi
 
-	result=$(ls_with_branch | fzf --reverse --header="$(pwd) | (ctrl-c to abort, ctrl-d to change dir)" --height=30 --bind "ctrl-d:abort+execute(echo ___exit)")
+	result=$(ls_designed | fzf --reverse --header="$(pwd) | (ctrl-c to abort, ctrl-d to change dir)" --height=30 --ansi --bind "ctrl-d:abort+execute(echo ___exit)")
 
 	# ctrl-c
 	if [ -z "$result" ]; then
