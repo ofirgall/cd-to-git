@@ -23,7 +23,7 @@ choose_dir()
 		return
 	fi
 
-	result=$(ls_with_branch | fzf --reverse --header="$(pwd)/ (ctrl-c to abort, ctrl-d to change dir)" --height=30 --bind "ctrl-d:abort+execute(echo ___exit)")
+	result=$(ls_with_branch | fzf --reverse --header="$(pwd) | (ctrl-c to abort, ctrl-d to change dir)" --height=30 --bind "ctrl-d:abort+execute(echo ___exit)")
 
 	# ctrl-c
 	if [ -z "$result" ]; then
