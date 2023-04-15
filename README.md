@@ -10,6 +10,9 @@ cg # cd to a git repo to $CD_TO_GIT_DEFAULT_DIR
 ```
 
 ## Install
+Requirements:
+- [fzf](https://github.com/junegunn/fzf)
+
 ### zinit
 ```bash
 zinit ice wait lucid
@@ -27,4 +30,6 @@ source ~/.zsh-cd-to-git/cdtogit.plugin.zsh
 ```
 
 ## Config
-
+```bash
+CD_TO_GIT_DEFAULT_DIR=~/workspace/
+```
