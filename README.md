@@ -1,7 +1,7 @@
 # cd-to-git
 Change directory to a git repo with fzf
 
-TODO: add demo
+https://user-images.githubusercontent.com/4954051/232235250-63ea5a64-c910-4b8d-91a5-ec90941ae11f.mp4
 
 ## Usage
 ```bash
