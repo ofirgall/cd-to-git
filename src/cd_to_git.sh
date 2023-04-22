@@ -3,7 +3,6 @@
 if [ -z $CD_TO_GIT_DEFAULT_DIR ]; then
 	CD_TO_GIT_DEFAULT_DIR=$HOME/workspace
 fi
-source $HOME/dotfiles_scripts/helpers/git.sh
 
 original_pwd=$(pwd)
 
