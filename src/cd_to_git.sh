@@ -27,7 +27,7 @@ choose_dir()
 		return
 	fi
 
-	result=$(ls_designed | fzf --reverse --header="$(pwd) | (ctrl-c to abort, ctrl-x to change exit)" --height=30 --ansi --bind "ctrl-x:abort+execute(echo ___exit)")
+	result=$(ls_designed | fzf --reverse --header="$(pwd) | (ctrl-c to abort, ctrl-x to exit here)" --height=30 --ansi --bind "ctrl-x:become(echo ___exit)")
 
 	# ctrl-c
 	if [ -z "$result" ]; then
@@ -35,7 +35,7 @@ choose_dir()
 		return
 	fi
 
-	# ctrl-z
+	# ctrl-x
 	if [ "$result" == "___exit" ]; then
 		return
 	fi
